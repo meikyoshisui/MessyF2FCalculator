@@ -1,7 +1,6 @@
-#test comment
+# test comment
 import random
 import sys
-
 
 p1burst = int(sys.argv[1])
 p1successvalue = int(sys.argv[2])
@@ -45,32 +44,31 @@ for i in range(0, 100000):
     print("P1 rolls " + str(p1rolls) + ", succeeding on " + str(p1successes))
     print("P2 rolls " + str(p2rolls) + ", succeeding on " + str(p2successes))
 
-
     # Determine which player won f2f
     # Crits
-    if (p1crit and p2crit):
+    if p1crit and p2crit:
         neitherplayersuccesscount += 1
         print("Both players crit.")
         continue
-    if (p1crit and not p2crit):
+    if p1crit and not p2crit:
         p1successCount += 1
         print("P1 crit.")
         continue
-    if (p2crit and not p1crit):
+    if p2crit and not p1crit:
         p2successCount += 1
         print("P2 crit.")
         continue
 
-    #one or both players have 0 successful rolls
-    if (p1successes == [] and p2successes == []):
+    # one or both players have 0 successful rolls
+    if p1successes == [] and p2successes == []:
         neitherplayersuccesscount += 1
         print("Both players miss.")
         continue
-    if(p1successes == [] and not p2successes == []):
+    if p1successes == [] and not p2successes == []:
         p2successCount += 1
         print("P2 wins, P1 has no successes.")
         continue
-    if(p2successes == [] and not p1successes == []):
+    if p2successes == [] and not p1successes == []:
         p1successCount += 1
         print("P1 wins, P2 has no successes.")
         continue
